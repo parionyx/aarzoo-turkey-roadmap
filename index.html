@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aarzoo → Türkiye Scholarships Master's Roadmap</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+:root{
+  --bg:#0a0c10;
+  --bg2:#0f1218;
+  --card:rgba(22,26,34,.72);
+  --card-solid:#161a22;
+  --border:rgba(255,255,255,.07);
+  --border2:rgba(255,255,255,.12);
+  --fg:#eef1f6;
+  --mut:#8b93a3;
+  --mut2:#5f6776;
+  --acc:#7c9cff;
+  --acc2:#ff9e5e;
+  --acc3:#36d399;
+  --warn:#ffc46b;
+  --bad:#ff6b6b;
+  --grad:linear-gradient(135deg,#7c9cff 0%,#b07cff 50%,#ff9e5e 100%);
+  --grad2:linear-gradient(135deg,#1a2030,#0f1218);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:26px 18px 40px;background:
+  radial-gradient(1200px 600px at 12% -8%,rgba(124,156,255,.10),transparent 60%),
+  radial-gradient(900px 500px at 92% 4%,rgba(255,158,94,.08),transparent 55%),
+  var(--bg);
+  font-size:14px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto}
+.grotesk{font-family:'Space Grotesk',sans-serif}
+
+/* Header */
+.head{position:relative;margin-bottom:26px}
+.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--acc);font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--grad);border-radius:2px}
+h1{font-size:34px;line-height:1.1;font-weight:800;letter-spacing:-.5px;
+  background:linear-gradient(120deg,#fff 20%,#c9d4ff 60%,#ffc9a3 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.sub{color:var(--mut);font-size:13.5px;margin-top:9px;max-width:680px}
+.src{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:11.5px;color:var(--mut2);
+  background:var(--card);border:1px solid var(--border);padding:5px 11px;border-radius:30px}
+
+/* Goal banner */
+.banner{margin-top:22px;position:relative;overflow:hidden;border-radius:18px;padding:18px 22px;
+  background:linear-gradient(120deg,rgba(124,156,255,.14),rgba(255,158,94,.07));
+  border:1px solid var(--border2);backdrop-filter:blur(8px)}
+.banner::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;
+  background:radial-gradient(circle,rgba(255,158,94,.22),transparent 70%);filter:blur(10px)}
+.banner .t{font-weight:700;font-size:16px;color:#fff;display:flex;align-items:center;gap:9px}
+.banner .d{font-size:13px;color:var(--mut);margin-top:5px}
+
+/* Grid + cards */
+.grid{display:grid;gap:14px;margin-top:14px}
+.c2{grid-template-columns:1fr 1fr}
+.c3{grid-template-columns:repeat(3,1fr)}
+.c4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 18px;
+  backdrop-filter:blur(10px);transition:transform .18s ease,border-color .18s ease}
+.card:hover{transform:translateY(-2px);border-color:var(--border2)}
+.card h3{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);margin-bottom:13px;font-weight:600;display:flex;align-items:center;gap:7px}
+.card h3 .ico{width:7px;height:7px;border-radius:2px;background:var(--acc2)}
+
+/* Big stat */
+.kpi .big{font-size:26px;font-weight:800;letter-spacing:-.5px;color:#fff;font-family:'Space Grotesk',sans-serif}
+.kpi .lbl{font-size:11.5px;color:var(--mut);margin-top:3px}
+.kpi .glow{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* Tags */
+.tag{display:inline-flex;align-items:center;font-size:11px;font-weight:500;padding:3px 10px;border-radius:30px;
+  border:1px solid var(--border2);color:var(--mut);margin:3px 5px 3px 0;gap:5px}
+.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.8}
+.tag.ok{color:var(--acc3);border-color:rgba(54,211,153,.35)}
+.tag.warn{color:var(--warn);border-color:rgba(255,196,107,.35)}
+.tag.bad{color:var(--bad);border-color:rgba(255,107,107,.35)}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{color:var(--mut2);font-weight:600;font-size:10px;letter-spacing:.8px;text-transform:uppercase;text-align:left;padding:0 8px 9px}
+td{text-align:left;padding:9px 8px;border-top:1px solid var(--border);vertical-align:top}
+tr:hover td{background:rgba(255,255,255,.02)}
+.chk{font-weight:700}.chk.ok{color:var(--acc3)}.chk.pend{color:var(--warn)}.chk.no{color:var(--bad)}
+
+/* Timeline */
+.tl{position:relative;padding-left:26px;margin-top:4px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--acc),var(--acc2))}
+.mo{position:relative;margin-bottom:16px}
+.mo::before{content:"";position:absolute;left:-22px;top:3px;width:13px;height:13px;border-radius:50%;
+  background:var(--bg);border:3px solid var(--acc2);box-shadow:0 0 0 4px rgba(255,158,94,.12)}
+.mo .mm{font-weight:700;font-size:13.5px;color:#fff;font-family:'Space Grotesk',sans-serif}
+.mo .dt{font-size:11px;color:var(--acc);font-weight:600;letter-spacing:.3px;margin-bottom:4px}
+.mo ul{margin:5px 0 0 16px;font-size:12.5px;color:var(--mut)}
+.mo li{margin-bottom:3px}
+.mo li b{color:var(--fg)}
+
+/* Steps */
+.steps{counter-reset:s;list-style:none;padding:0;margin-top:4px}
+.steps li{position:relative;padding:11px 12px 11px 46px;border-bottom:1px solid var(--border);font-size:13px;color:var(--fg)}
+.steps li:last-child{border-bottom:none}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:8px;top:11px;width:26px;height:26px;
+  border-radius:9px;background:var(--grad);color:#0a0c10;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif}
+
+/* Cost rows */
+.costrow{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:8px 4px;border-bottom:1px solid var(--border)}
+.costrow .v{font-weight:800;color:var(--acc3);font-family:'Space Grotesk',sans-serif}
+.costrow.hl{border:none;margin-top:6px;padding-top:12px;border-top:1px dashed var(--border2)}
+.costrow.hl .v{color:var(--warn)}
+
+/* Note */
+.note{font-size:12px;color:var(--mut);background:rgba(255,158,94,.07);border-left:3px solid var(--acc2);
+  padding:9px 13px;border-radius:0 10px 10px 0;margin-top:10px}
+
+/* Pills */
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.5px;padding:3px 9px;border-radius:8px;
+  background:rgba(124,156,255,.15);color:var(--acc);text-transform:uppercase}
+
+/* Section title */
+.sec{margin-top:26px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--mut);
+  display:flex;align-items:center;gap:10px;margin-bottom:2px}
+.sec::after{content:"";flex:1;height:1px;background:var(--border)}
+
+.foot{color:var(--mut2);font-size:11px;text-align:center;margin-top:30px;padding-top:16px;border-top:1px solid var(--border)}
+
+@media(max-width:760px){.c2,.c3,.c4{grid-template-columns:1fr}h1{font-size:27px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div class="eyebrow">Study Abroad · Fully Funded Master's</div>
+    <h1 class="grotesk">Aarzoo → Türkiye Scholarships</h1>
+    <div class="sub">Complete process roadmap to send Aarzoo to Turkey for a fully-funded English-taught CS/AI Master's — no IELTS, ₹0 out-of-pocket, PR not required.</div>
+    <div class="src">📌 Source: turkiyeburslari.gov.tr (YTB) · Window 10 Jan – 20 Feb 2027 · Start Sept 2027</div>
+  </div>
+
+  <div class="banner">
+    <div class="t">🎯 Goal: Fully-funded Master's, no IELTS (MOI), ₹0 cost</div>
+    <div class="d">Plan: do the Master's → then move to another country. Turkey is the launchpad, not the PR destination.</div>
+  </div>
+
+  <!-- KPI row -->
+  <div class="grid c4">
+    <div class="card">
+      <h3><span class="ico"></span>Funding</h3>
+      <div class="kpi"><span class="big glow">₹0</span><span class="lbl">Out-of-pocket · fully funded</span></div>
+      <div style="margin-top:10px">
+        <span class="tag ok">Tuition</span><span class="tag ok">Stipend</span><span class="tag ok">Dorm</span>
+        <span class="tag ok">Insurance</span><span class="tag ok">Flight</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3><span class="ico"></span>English / IELTS</h3>
+      <div class="kpi"><span class="big" style="color:var(--acc3)">MOI ✅</span><span class="lbl">No IELTS required</span></div>
+      <div style="margin-top:10px;font-size:12px;color:var(--mut)">English-medium B.Tech + MOI cert = waiver. Classes in English.</div>
+    </div>
+    <div class="card">
+      <h3><span class="ico"></span>Eligibility</h3>
+      <div style="font-size:12.5px;display:flex;flex-wrap:wrap;gap:2px">
+        <span class="tag ok">Age 24 &lt; 30</span>
+        <span class="tag ok">Degree Dec 2026</span>
+        <span class="tag warn">% 70/75 borderline</span>
+        <span class="tag ok">12 programs</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3><span class="ico"></span>Duration</h3>
+      <div class="kpi"><span class="big">3</span><span class="lbl">Yrs: 1 prep + 2 MSc (both funded)</span></div>
+    </div>
+  </div>
+
+  <!-- Profile + Why -->
+  <div class="grid c2" style="margin-top:14px">
+    <div class="card">
+      <h3><span class="ico"></span>Aarzoo Profile</h3>
+      <table>
+        <tr><td>DOB / Age</td><td>22/07/2002 · 24 yrs</td></tr>
+        <tr><td>Qualification</td><td>B.Tech AIML (English medium)</td></tr>
+        <tr><td>Backlog</td><td class="chk ok">Clears Dec 2026 ✅</td></tr>
+        <tr><td>MOI cert</td><td class="chk pend">To collect from college (post-Dec)</td></tr>
+        <tr><td>Passport</td><td class="chk no">NOT made — tatkal now</td></tr>
+        <tr><td>IELTS</td><td class="chk ok">Not needed (MOI)</td></tr>
+        <tr><td>Target</td><td>English-taught CS / AI MSc</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3><span class="ico"></span>Why Türkiye over others</h3>
+      <ul style="font-size:12.5px;margin-left:16px;color:var(--mut)">
+        <li><b style="color:var(--fg)">Only route fully funded + MOI:</b> tuition+stipend+dorm+insurance+flight.</li>
+        <li><b style="color:var(--fg)">Erasmus Mundus</b> richer but EMAI/CYBERSURE <b style="color:var(--warn)">force IELTS 6.5</b>.</li>
+        <li><b style="color:var(--fg)">Hungary</b> funded but low stipend (€110/mo).</li>
+        <li><b style="color:var(--fg)">Poland/Italy</b> cheap but <b style="color:var(--warn)">not fully funded</b>.</li>
+        <li><b style="color:var(--fg)">PR not needed</b> → Turkey = perfect study stop.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="sec">Month-by-Month Timeline · Aug 2026 → Sept 2027</div>
+  <div class="card" style="margin-top:10px">
+    <div class="tl">
+      <div class="mo"><div class="mm">AUG 2026</div><div class="dt">ACTION WINDOW OPENS</div>
+        <ul><li><b>Passport tatkal apply</b> (2–3 wks) — top blocker</li><li>Request MOI cert from college (arrives Dec)</li><li>Keep father's bank account clean + ITR ready (visa later)</li></ul></div>
+      <div class="mo"><div class="mm">SEP – NOV 2026</div><div class="dt">PREP</div>
+        <ul><li>Receive passport (valid ≥18 mo)</li><li>Draft SOP + request 2 LORs from profs</li><li>Start <b>apostille + English sworn translation</b> of B.Tech docs (Hague → MEA)</li><li>Shortlist 6–10 English CS/AI programs in TBBS</li></ul></div>
+      <div class="mo"><div class="mm">DEC 2026</div><div class="dt">DEGREE MILESTONE</div>
+        <ul><li><b>Degree awarded ✅</b> + collect MOI cert</li><li>Final transcript + diploma apostille complete</li></ul></div>
+      <div class="mo"><div class="mm">10 JAN – 20 FEB 2027</div><div class="dt">🚨 APPLICATION WINDOW (TBBS)</div>
+        <ul><li>Register on turkiyeburslari.gov.tr (TBBS)</li><li>Upload docs + rank up to 12 program preferences</li><li>Write motivation letter in portal (1500–4000 chars)</li><li>Submit before 20 Feb — <b style="color:var(--acc3)">FREE</b></li></ul></div>
+      <div class="mo"><div class="mm">MAR – MAY 2027</div><div class="dt">EVALUATION + INTERVIEW</div>
+        <ul><li>Document review → shortlist</li><li><b>Interview (15–30 min)</b> — SOP + program fit</li></ul></div>
+      <div class="mo"><div class="mm">AUG 2027</div><div class="dt">FINAL PROOF</div>
+        <ul><li>Submit final graduation certificate (before deadline)</li><li>Confirm result + placement</li></ul></div>
+      <div class="mo"><div class="mm">SEP 2027</div><div class="dt">🎓 START</div>
+        <ul><li>Arrive Turkey (flight funded)</li><li>1-yr Turkish prep (free) + 2-yr English MSc</li></ul></div>
+    </div>
+  </div>
+
+  <!-- Docs + Cost -->
+  <div class="grid c2" style="margin-top:14px">
+    <div class="card">
+      <h3><span class="ico"></span>Document Checklist</h3>
+      <table>
+        <tr><th>Document</th><th>Status</th><th>Note</th></tr>
+        <tr><td>Passport (≥18mo)</td><td class="chk no">Pending</td><td>Tatkal now</td></tr>
+        <tr><td>Photo (white bg)</td><td class="chk pend">Todo</td><td>≤6 mo old</td></tr>
+        <tr><td>B.Tech diploma</td><td class="chk pend">Dec</td><td>Apostille+trans</td></tr>
+        <tr><td>Transcript</td><td class="chk pend">Dec</td><td>Apostille+trans</td></tr>
+        <tr><td>MOI cert</td><td class="chk pend">Dec</td><td>From college</td></tr>
+        <tr><td>Motivation letter</td><td class="chk pend">Todo</td><td>1500–4000 ch</td></tr>
+        <tr><td>2 LORs</td><td class="chk pend">Todo</td><td>Profs, letterhead</td></tr>
+        <tr><td>CV / Resume</td><td class="chk pend">Todo</td><td>Academic</td></tr>
+        <tr><td>Study plan</td><td class="chk pend">Todo</td><td>Master's</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3><span class="ico"></span>Cost Breakdown</h3>
+      <div class="costrow"><span>Application fee (TBBS)</span><span class="v">₹0</span></div>
+      <div class="costrow"><span>Tuition</span><span class="v">₹0</span></div>
+      <div class="costrow"><span>Dorm / Housing</span><span class="v">₹0</span></div>
+      <div class="costrow"><span>Health insurance</span><span class="v">₹0</span></div>
+      <div class="costrow"><span>Flight (India↔TR)</span><span class="v">₹0</span></div>
+      <div class="costrow"><span>Monthly stipend</span><span class="v">PAID</span></div>
+      <div class="costrow"><span>Turkish prep year</span><span class="v">₹0</span></div>
+      <div class="costrow hl"><span>Only real cost</span><span>Passport ~₹1.5k + apostille ~₹4k</span></div>
+      <div class="note">⚠️ Only out-of-pocket ≈ ₹5–6k. Everything else covered by scholarship.</div>
+    </div>
+  </div>
+
+  <!-- TBBS steps -->
+  <div class="sec">TBBS Application Steps</div>
+  <div class="card" style="margin-top:10px">
+    <ol class="steps">
+      <li>Open official portal: turkiyeburslari.gov.tr → "Apply" (TBBS system)</li>
+      <li>Create account + enter identity/education details accurately</li>
+      <li>Upload all docs (passport, diploma, transcript, MOI, photo)</li>
+      <li>Search programs with "English" filter → pick CS/AI MSc (up to 12)</li>
+      <li>Write motivation letter + study plan (consistent with CV/LORs)</li>
+      <li>Attach 2 recommendation letters</li>
+      <li>Review → submit before 20 Feb → save confirmation email</li>
+      <li>Prep interview: know your exact files + program details</li>
+    </ol>
+  </div>
+
+  <!-- Turkish + After -->
+  <div class="grid c2" style="margin-top:14px">
+    <div class="card">
+      <h3><span class="ico"></span>Turkish Language?</h3>
+      <span class="pill">Clarification</span>
+      <ul style="margin:10px 0 0 16px;font-size:12.5px;color:var(--mut)">
+        <li>Master's is <b style="color:var(--fg)">in English</b> — not for degree</li>
+        <li>1-yr Turkish prep <b style="color:var(--acc3)">included + free</b> (integration)</li>
+        <li>Prep year doesn't interrupt the degree</li>
+        <li>PR not wanted → Turkish optional later</li>
+        <li>Total: 1 yr prep + 2 yr English MSc = 3 yrs, ₹0</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="ico"></span>After Master's</h3>
+      <ul style="margin:8px 0 0 16px;font-size:12.5px;color:var(--mut)">
+        <li>Goal: another country → Turkey = launchpad</li>
+        <li>Turkish prep helps intern/network locally</li>
+        <li>EU/Canada/Aus move easier post-Master's (portable English degree)</li>
+        <li>Decide PR path in next country</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Risks -->
+  <div class="sec">Risks / Open Items</div>
+  <div class="card" style="margin-top:10px">
+    <table>
+      <tr><th>Risk</th><th>Impact</th><th>Mitigation</th></tr>
+      <tr><td>B.Tech % 70/75 conflict</td><td class="chk warn">Borderline (merit ~75%)</td><td>Strong SOP + 2 LORs; pick less competitive programs</td></tr>
+      <tr><td>Passport delay</td><td class="chk bad">Blocker</td><td>Start tatkal immediately</td></tr>
+      <tr><td>MOI not ready by Dec</td><td class="chk warn">IELTS fallback</td><td>Early college request; else IELTS 6.5</td></tr>
+      <tr><td>Apostille time</td><td class="chk warn">2–4 wks</td><td>Start Nov</td></tr>
+      <tr><td>Interview</td><td class="chk warn">Deciding factor</td><td>Mock + file consistency</td></tr>
+    </table>
+  </div>
+
+  <div class="foot">JARVIS plan · verified vs turkiyeburslari.gov.tr · re-check 2027 call before filing · Aarzoo Verma profile</div>
+
+</div>
+</body>
+</html>
